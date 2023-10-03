@@ -5,14 +5,30 @@
 </head>
 <body>
     <div id="login-container" style="text-align: center; margin-top: 100px;">
-        <h1>Welcome to the Locked Page</h1>
-        <p>Please enter the password to unlock:</p>
-        <input type="password" id="password-input">
+        <h1>Welcome to Magic Page</h1>
+        <p>Please enter the magic word to unlock:</p>
+        <input type="Open Sesame" id="password-input">
         <button onclick="checkPassword()">Unlock</button>
         <p id="message"></p>
-<script src="style1.js">
-</script>
-      
     </div>
+
+    <div id="content" style="display: none;">
+        <h1>You opened the magic program successfully!</h1>
+
+
+    <script>
+        const password = "Open Sesame"; // Replace with your desired password
+
+        function checkPassword() {
+            const enteredPassword = document.getElementById("password-input").value;
+
+            if (enteredPassword === password) {
+                document.getElementById("login-container").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                document.getElementById("message").textContent = "Please try again.";
+            }
+        }
+    </script>
 </body>
 </html>
